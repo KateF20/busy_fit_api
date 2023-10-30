@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  be:
+#    image: backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: be
+    restart: always
+    ports:
+      - "80:80"
+    tty: true
+    volumes:
+      - "C:/Users/Katushenka/PycharmProjects/busy_fit_api/backend/app:/code/app:rw"
+#    command: uvicorn app.main:app --host 0.0.0.0 --port "80"
